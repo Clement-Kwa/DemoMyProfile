@@ -31,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
         String msg = prefs.getString("name", "Enter Name");
         etName.setText(msg);
 
-        SharedPreferences prefsB = getPreferences(MODE_PRIVATE);
-        Float msgB = prefs.getFloat("gpa", 1.23f);
+        float msgB = prefs.getFloat("gpa", 1.23f);
         etGPA.setText(Float.toString(msgB));
     }
 
@@ -49,10 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         float gpaValue = Float.parseFloat(etGPA.getText().toString())  ;
-        SharedPreferences prefB =getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor prefEditB = pref.edit();
-        prefEditB.putFloat("gpa", gpaValue);
-        prefEditB.commit();
+        prefEdit.putFloat("gpa", gpaValue);
+        prefEdit.commit();
 
     }
 
